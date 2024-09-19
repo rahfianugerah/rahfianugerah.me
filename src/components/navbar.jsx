@@ -1,7 +1,6 @@
 'use client'
 import React from "react";
-import { FaGithub, FaLinkedin, FaHome, FaProjectDiagram, FaUser } from "react-icons/fa";
-import { FaPencil } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaHome, FaProjectDiagram, FaUser, FaBlog, FaEnvelope } from "react-icons/fa";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button } from "@nextui-org/react";
 
 export default function MyNavbar() {
@@ -29,19 +28,19 @@ export default function MyNavbar() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link className="navbar-link" color="foreground" href="#">
+          <Link className="navbar-link" color="foreground" href="#home">
             <FaHome className="mr-2" />
             Home
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className="navbar-link" color="foreground" href="#">
+          <Link className="navbar-link" color="foreground" href="#projects">
             <FaProjectDiagram className="mr-2" />
             Projects
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className="navbar-link" color="foreground" href="#">
+          <Link className="navbar-link" color="foreground" href="#profile">
             <FaUser className="mr-2" />
             Profile
           </Link>
@@ -49,21 +48,35 @@ export default function MyNavbar() {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#"><FaGithub color="#ffffff" /></Link>
+        <NavbarItem className="hidden sm:flex">
+          <Link href="#"><FaGithub color="#ffffff" /></Link> 
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">
+        <NavbarItem className="hidden sm:flex">
           <Link href="#"><FaLinkedin color="#ffffff" /></Link>
         </NavbarItem>
-        <NavbarItem className="navbar-link">
+
+        {/* Responsive icons for Blog and Contact */}
+        <NavbarItem className="navbar-link hidden lg:block">
           <Button as={Link} color="white" href="#" variant="ghost">
             My Blog
           </Button>
         </NavbarItem>
-        <NavbarItem className="navbar-link">
+        <NavbarItem className="navbar-link hidden lg:block">
           <Button as={Link} color="primary" href="#" variant="shadow">
             Contact
           </Button>
+        </NavbarItem>
+
+        {/* Icons for smaller screens */}
+        <NavbarItem className="lg:hidden">
+          <Link href="#" aria-label="My Blog">
+            <FaBlog />
+          </Link>
+        </NavbarItem>
+        <NavbarItem className="lg:hidden">
+          <Link href="#" aria-label="Contact">
+            <FaEnvelope />
+          </Link>
         </NavbarItem>
       </NavbarContent>
 
