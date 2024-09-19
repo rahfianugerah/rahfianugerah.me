@@ -28,6 +28,14 @@ body {
   }
 }
 
+.navbar-logo{
+  font-family: Bebas Neue;
+}
+
 .navbar-link {
+  font-family: Bebas Neue;
+}
+
+.footer-text {
   font-family: Bebas Neue;
 }

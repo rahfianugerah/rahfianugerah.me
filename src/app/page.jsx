@@ -1,4 +1,5 @@
 
+import Footer from "@/components/footer";
 import MyNavbar from "@/components/navbar";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <header>
         <MyNavbar/>
       </header>
+      <Footer/>
     </>
   );
 }

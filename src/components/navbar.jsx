@@ -22,7 +22,7 @@ export default function MyNavbar() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <p className="navbar-link text-lg text-inherit">Rahfi Anugerah</p>
+          <p className="navbar-logo text-lg text-inherit">Rahfi Anugerah</p>
         </NavbarBrand>
       </NavbarContent>
 
