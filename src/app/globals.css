@@ -16,6 +16,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -34,6 +38,10 @@ body {
 
 .navbar-link {
   font-family: Bebas Neue;
+}
+
+.hero-text {
+  text-align: justify;
 }
 
 .footer-text {
