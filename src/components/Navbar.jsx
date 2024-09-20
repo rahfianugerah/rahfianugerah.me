@@ -1,18 +1,21 @@
-'use client'
-import React from "react";
-import { FaGithub, FaLinkedin, FaHome, FaProjectDiagram, FaUser, FaBlog, FaEnvelope } from "react-icons/fa";
+'use client';
+import React, { useState } from "react";
+import { FaHome, FaProjectDiagram, FaUser, FaBlog, FaEnvelope } from "react-icons/fa";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button } from "@nextui-org/react";
 
 export default function MyNavbar() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
+  
   const menuItems = [
-    { label: "Home", href: "#home", icon: <FaHome /> },
-    { label: "Projects", href: "#projects", icon: <FaProjectDiagram /> },
-    { label: "Profile", href: "#profile", icon: <FaUser /> },
-    { label: "Github", href: "#", icon: <FaGithub color="#ffffff" /> },
-    { label: "LinkedIn", href: "#", icon: <FaLinkedin color="#ffffff" />}
+    { label: "Home", href: "#home", icon: <FaHome />, index: 0 },
+    { label: "Projects", href: "#projects", icon: <FaProjectDiagram />, index: 1 },
+    { label: "Profile", href: "#profile", icon: <FaUser />, index: 2 }
   ];
+
+  const handleClick = (index) => {
+    setActiveIndex(index);
+  };
 
   return (
     <Navbar onMenuOpenChange={setIsMenuOpen}>
@@ -26,35 +29,27 @@ export default function MyNavbar() {
         </NavbarBrand>
       </NavbarContent>
 
+      {/* Main Navbar for large screens */}
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link className="navbar-link" color="foreground" href="#home">
-            <FaHome className="mr-2" />
-            Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="navbar-link" color="foreground" href="#projects">
-            <FaProjectDiagram className="mr-2" />
-            Projects
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="navbar-link" color="foreground" href="#profile">
-            <FaUser className="mr-2" />
-            Profile
-          </Link>
-        </NavbarItem>
+        {menuItems.map((item) => (
+          <NavbarItem key={item.index}>
+            <Link
+              className={`navbar-link ${activeIndex === item.index ? "active" : ""}`}
+              color="foreground"
+              href={item.href}
+              onClick={() => handleClick(item.index)}
+            >
+              {item.icon}
+              <span className="ml-2">{item.label}</span>
+            </Link>
+          </NavbarItem>
+        ))}
       </NavbarContent>
 
       <NavbarContent justify="end">
         <NavbarItem className="hidden sm:flex">
-          <Link href="#"><FaGithub color="#ffffff" /></Link> 
+          
         </NavbarItem>
-        <NavbarItem className="hidden sm:flex">
-          <Link href="#"><FaLinkedin color="#ffffff" /></Link>
-        </NavbarItem>
-
         {/* Responsive icons for Blog and Contact */}
         <NavbarItem className="navbar-link hidden lg:block">
           <Button as={Link} color="white" href="#" variant="ghost">
@@ -81,11 +76,11 @@ export default function MyNavbar() {
       </NavbarContent>
 
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={index}>
+        {menuItems.map((item) => (
+          <NavbarMenuItem key={item.index}>
             <Link
               color="foreground"
-              className="navbar-link w-full"
+              className="navbar-link w-full" // No active class for aside menu
               href={item.href}
               size="lg"
             >

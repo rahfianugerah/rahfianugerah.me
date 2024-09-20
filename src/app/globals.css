@@ -41,6 +41,43 @@ body {
   font-family: Bebas Neue;
 }
 
+.navbar-link {
+  position: relative;
+  padding-bottom: 5px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-link.active {
+  color: #0070f3;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0070f3;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-link.active::after {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .navbar-link {
+    color: #fff;
+  }
+
+  .navbar-link::after {
+    width: 0;
+  }
+}
+
 .hero-text {
   text-align: justify;
 }
