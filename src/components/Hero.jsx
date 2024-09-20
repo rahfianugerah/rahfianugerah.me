@@ -4,7 +4,7 @@ import ScrollProgressAside from './ProgressBar.jsx';
 import { FaProjectDiagram, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Button } from '@nextui-org/button';
 
-const roles = ["Software Engineer", "AI Engineer", "Cloud Engineer"];
+const roles = ["Software Engineer", "AI Engineer", "Cloud Engineer", "ソフトウェアエンジニア"];
 
 export default function Hero() {
   const [currentRole, setCurrentRole] = useState("");
@@ -46,7 +46,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-#0a0a0a bg-opacity-50"></div>
         <div className="relative z-10 text-white px-8 sm:px-16 md:px-20 lg:px-24 xl:px-32 -mt-24 flex flex-col items-start">
           <div className="max-w-xl lg:max-w-3xl"> 
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ minHeight: '48px' }}>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4" style={{ minHeight: '48px' }}>
               {currentRole}
             </h2>
             <h2 className="text-3xl sm:text-4xl font-semibold mb-6">
