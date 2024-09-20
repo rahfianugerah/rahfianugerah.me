@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import ScrollProgressAside from './ProgressBar.jsx';
-import { FaProjectDiagram } from 'react-icons/fa';
+import { FaProjectDiagram, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Button } from '@nextui-org/button';
 
 const roles = ["Software Engineer", "AI Engineer", "Cloud Engineer"];
@@ -12,7 +12,7 @@ export default function Hero() {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const period = 2000; // Pause between changing words
+  const period = 2000;
 
   useEffect(() => {
     let typingTimeout;
@@ -55,9 +55,17 @@ export default function Hero() {
             <p className="hero-text text-lg sm:text-xl mb-8 pr-8">
               A versatile software engineer with a rapid learning curve, specializing in AI, Machine Learning, Cloud Computing, and Website Development, committed to delivering advanced and impactful technological solutions.
             </p>
-            <Button color="primary" variant="bordered" startContent={<FaProjectDiagram/>}>
-                  Explore Projects
-            </Button>
+            <div className="flex items-center space-x-4"> {/* Add space between items */}
+              <Button color="primary" variant="bordered" startContent={<FaProjectDiagram />}>
+                Explore
+              </Button>
+              <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer">
+                <FaGithub className="text-3xl" />
+              </a>
+              <a href="https://linkedin.com/in/your-linkedin-username" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className="text-3xl" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
