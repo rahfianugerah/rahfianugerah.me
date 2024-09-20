@@ -13,8 +13,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Naufal Rahfi Anugerah",
-  description: "Website",
+  title: "Naufal Rahfi Anugerah"
 };
 
 export default function RootLayout({ children }) {
