@@ -1,8 +1,9 @@
 import localFont from "next/font/local";
-import "./globals.css";
 import MyNavbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import "./globals.css";
 
+// Import custom fonts
 const geistSans = localFont({
   src: "../../public/fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -15,20 +16,24 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Naufal Rahfi Anugerah"
+  title: "Naufal Rahfi Anugerah",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <header>
-          <MyNavbar/>
+          <MyNavbar />
         </header>
-        {children}
-        <Footer/>
+        <main className="flex-grow flex items-center justify-center">
+          {children}
+        </main>
+        <footer className="flex-shrink-0">
+          <Footer />
+        </footer>
       </body>
     </html>
   );
