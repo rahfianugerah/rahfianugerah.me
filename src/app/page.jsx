@@ -6,13 +6,9 @@ import MyNavbar from "@/components/Navbar";
 export default function Home() {
   return (
     <>
-      <header>
-        <MyNavbar/>
-      </header>
       <main>
         <Hero/>
       </main>
-      <Footer/>
     </>
   );
 }

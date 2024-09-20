@@ -38,14 +38,16 @@ body {
 }
 
 .navbar-link {
-  font-family: Bebas Neue;
+  font-family: 'Bebas Neue', sans-serif;
   position: relative;
   text-decoration: none;
   color: inherit;
+  display: flex;
 }
 
 .navbar-text {
   position: relative;
+  padding-bottom: 4px; /* Add some padding for better visibility */
 }
 
 .navbar-text::after {
@@ -57,10 +59,12 @@ body {
   height: 4px;
   background: #ffffff;
   transform: scaleX(0);
+  transform-origin: left; /* Animation starts from the left */
   transition: transform 0.3s ease;
 }
 
-.navbar-text.active::after {
+.navbar-text.active::after,
+.navbar-text:hover::after {
   transform: scaleX(1);
 }
 

@@ -1,16 +1,17 @@
 'use client';
 import React, { useState, useEffect } from "react";
 import { FaHome, FaProjectDiagram, FaUser } from "react-icons/fa";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
+import Link from "next/link"; // Import Next.js Link component
 
 const MyNavbar = () => {
   const [setIsMenuOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0); // Default to Home
-  
+
   const menuItems = [
     { label: "Home", href: "/", icon: <FaHome />, index: 0 },
-    { label: "Projects", href: "#projects", icon: <FaProjectDiagram />, index: 1 },
-    { label: "Profile", href: "#profile", icon: <FaUser />, index: 2 }
+    { label: "Projects", href: "/projects", icon: <FaProjectDiagram />, index: 1 },
+    { label: "Profile", href: "/profile", icon: <FaUser />, index: 2 }
   ];
 
   useEffect(() => {
@@ -35,8 +36,7 @@ const MyNavbar = () => {
         {menuItems.map((item) => (
           <NavbarItem key={item.index}>
             <Link
-              className="navbar-link"
-              color="foreground"
+              className={`navbar-link ${activeIndex === item.index ? "active" : ""}`}
               href={item.href}
               onClick={() => handleClick(item.index)}
             >
@@ -54,9 +54,9 @@ const MyNavbar = () => {
           <NavbarItem key={item.index}>
             <Link
               className="navbar-link"
-              color="foreground"
               href={item.href}
               onClick={() => handleClick(item.index)}
+              passHref
             >
               {item.icon}
             </Link>
