@@ -1,8 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import ScrollProgressAside from './ProgressBar.jsx';
-import { FaProjectDiagram, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaBookOpen} from 'react-icons/fa';
 import { Button } from '@nextui-org/button';
+import { Link } from '@nextui-org/link';
 
 const roles = ["Software Engineer", "AI Engineer", "Cloud Engineer", "ソフトウェアエンジニア"];
 
@@ -50,19 +51,22 @@ export default function Hero() {
               {currentRole}
             </h2>
             <h2 className="text-3xl sm:text-4xl font-semibold mb-6">
-              I&apos;m Naufal Rahfi Anugerah
+              Naufal Rahfi Anugerah
             </h2>
-            <p className="hero-text text-lg sm:text-xl mb-8 pr-8">
+            <p className="hero-text text-lg mb-8 pr-8">
               A versatile software engineer with a rapid learning curve, specializing in AI, Machine Learning, Cloud Computing, and Website Development, committed to delivering advanced and impactful technological solutions.
             </p>
             <div className="flex items-center space-x-4"> {/* Add space between items */}
-              <Button color="primary" variant="bordered" startContent={<FaProjectDiagram />}>
+              <Button as={Link} color="primary" href="#" variant="bordered" startContent={<FaBookOpen/>}>
                 Explore
               </Button>
-              <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/rahfianugerah" target="_blank" rel="noopener noreferrer">
+                <FaEnvelope className="text-3xl" />
+              </a>
+              <a href="https://github.com/rahfianugerah" target="_blank" rel="noopener noreferrer">
                 <FaGithub className="text-3xl" />
               </a>
-              <a href="https://linkedin.com/in/your-linkedin-username" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/rahfianugerah" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin className="text-3xl" />
               </a>
             </div>

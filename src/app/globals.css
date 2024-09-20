@@ -56,7 +56,6 @@ body {
   bottom: -4px;
   height: 4px;
   background: #ffffff;
-  border-radius: 2px;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -67,6 +66,7 @@ body {
 
 .hero-text {
   text-align: justify;
+  color: #6b7280;
 }
 
 .footer-text {
