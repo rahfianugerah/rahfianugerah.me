@@ -1,17 +1,23 @@
 'use client';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaHome, FaProjectDiagram, FaUser, FaBlog, FaEnvelope } from "react-icons/fa";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button } from "@nextui-org/react";
 
-export default function MyNavbar() {
+const MyNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0); // Default to Home
   
   const menuItems = [
-    { label: "Home", href: "#home", icon: <FaHome />, index: 0 },
+    { label: "Home", href: "/", icon: <FaHome />, index: 0 },
     { label: "Projects", href: "#projects", icon: <FaProjectDiagram />, index: 1 },
     { label: "Profile", href: "#profile", icon: <FaUser />, index: 2 }
   ];
+
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    const currentIndex = menuItems.findIndex(item => item.href === currentPath);
+    setActiveIndex(currentIndex !== -1 ? currentIndex : 0);
+  }, []);
 
   const handleClick = (index) => {
     setActiveIndex(index);
@@ -34,22 +40,21 @@ export default function MyNavbar() {
         {menuItems.map((item) => (
           <NavbarItem key={item.index}>
             <Link
-              className={`navbar-link ${activeIndex === item.index ? "active" : ""}`}
+              className="navbar-link"
               color="foreground"
               href={item.href}
               onClick={() => handleClick(item.index)}
             >
               {item.icon}
-              <span className="ml-2">{item.label}</span>
+              <span className={`ml-2 navbar-text ${activeIndex === item.index ? "active" : ""}`}>
+                {item.label}
+              </span>
             </Link>
           </NavbarItem>
         ))}
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="hidden sm:flex">
-          
-        </NavbarItem>
         {/* Responsive icons for Blog and Contact */}
         <NavbarItem className="navbar-link hidden lg:block">
           <Button as={Link} color="white" href="#" variant="ghost">
@@ -80,16 +85,20 @@ export default function MyNavbar() {
           <NavbarMenuItem key={item.index}>
             <Link
               color="foreground"
-              className="navbar-link w-full" // No active class for aside menu
+              className="navbar-link w-full"
               href={item.href}
               size="lg"
             >
               {item.icon && <span className="mr-2">{item.icon}</span>}
-              {item.label}
+              <span className={`navbar-text ${activeIndex === item.index ? "active" : ""}`}>
+                {item.label}
+              </span>
             </Link>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
     </Navbar>
   );
-}
+};
+
+export default MyNavbar;

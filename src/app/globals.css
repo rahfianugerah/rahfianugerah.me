@@ -39,43 +39,30 @@ body {
 
 .navbar-link {
   font-family: Bebas Neue;
-}
-
-.navbar-link {
   position: relative;
-  padding-bottom: 5px;
-  color: #fff;
   text-decoration: none;
-  transition: color 0.3s ease;
+  color: inherit;
 }
 
-.navbar-link.active {
-  color: #0070f3;
+.navbar-text {
+  position: relative;
 }
 
-.navbar-link::after {
+.navbar-text::after {
   content: '';
   position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
   left: 0;
-  background-color: #0070f3;
-  transition: width 0.3s ease-in-out;
+  right: 0;
+  bottom: -4px;
+  height: 4px;
+  background: #ffffff;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
-.navbar-link.active::after {
-  width: 100%;
-}
-
-@media (max-width: 640px) {
-  .navbar-link {
-    color: #fff;
-  }
-
-  .navbar-link::after {
-    width: 0;
-  }
+.navbar-text.active::after {
+  transform: scaleX(1);
 }
 
 .hero-text {
