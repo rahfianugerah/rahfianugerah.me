@@ -28,7 +28,7 @@ const MyNavbar = () => {
     <Navbar onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarBrand>
-          <p className="navbar-logo text-lg text-inherit">Rahfi Anugerah</p>
+          <a href="/" className="navbar-logo text-lg text-inherit">Rahfi Anugerah</a>
         </NavbarBrand>
       </NavbarContent>
 
