@@ -41,8 +41,8 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative bg-cover bg-center flex items-center justify-center">
-      <div className="absolute inset-0 bg-[#0a0a0a] bg-opacity-50"></div>
-      <div className="relative z-10 text-white px-8 sm:px-16 md:px-20 lg:px-24 xl:px-32 flex flex-col items-start">
+      <div className="absolute inset-0 bg-opacity-50"></div>
+      <div className="relative z-10 px-8 sm:px-16 md:px-20 lg:px-24 xl:px-32 flex flex-col items-start">
         <div className="max-w-xl lg:max-w-3xl"> 
           <h2 className="text-2xl sm:text-3xl font-bold mb-4" style={{ minHeight: '48px' }}>
             {currentRole}
