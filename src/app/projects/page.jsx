@@ -74,7 +74,7 @@ export default function Projects() {
         </div>
 
         {/* Display filtered projects with fade animation */}
-        <div className={`gap-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center items-center mx-auto ${isFading ? 'fade-in' : ''}`}>
+        <div className={`gap-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center items-center mx-auto ${isFading ? 'fade-in' : ''}`}>
           {filteredList.map((item, index) => (
             <div key={index} className="relative">
               <div className="absolute inset-0 bg-transparent border-4 border-white rounded-lg shadow-lg transform translate-x-2 translate-y-2" />
