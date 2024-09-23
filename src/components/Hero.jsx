@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaBookOpen} from 'react-icons/fa';
 import { Button } from '@nextui-org/button';
 import { Link } from '@nextui-org/link';
 
-const roles = ["Software Engineer", "AI Engineer", "Cloud Engineer", "ソフトウェアエンジニア"];
+const roles = ["Software Engineer", "AI/ML Engineer", "Cloud Engineer", "ソフトウェアエンジニア"];
 
 export default function Hero() {
   const [currentRole, setCurrentRole] = useState("");
