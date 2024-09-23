@@ -37,16 +37,16 @@ export default function Projects() {
   ];
 
   // State to manage selected category (default is 'All')
-  const [selectedTag, setSelectedTag] = useState('All');
+  const [selectedTag, setSelectedTag] = useState('</>');
   const [isFading, setIsFading] = useState(false);
 
   // Filter the list of projects based on the selected tag
-  const filteredList = selectedTag === 'All'
+  const filteredList = selectedTag === '</>'
     ? list
     : list.filter(item => item.tag === selectedTag);
 
   // List of unique tags for category buttons
-  const tags = ['All', ...new Set(list.map(item => item.tag))];
+  const tags = ['</>', ...new Set(list.map(item => item.tag))];
 
   // Use effect to trigger fade-in animation on initial load and on tag change
   useEffect(() => {
