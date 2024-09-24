@@ -9,27 +9,6 @@ export default function Profile() {
 
   return (
     <div className="flex flex-col items-center h-screen">
-      {/* Navbar */}
-      <nav className="text-white w-full flex justify-center space-x-8 p-4">
-        <button
-          className={`navbar-link hover:text-gray-400 ${activeSection === 'experiences' && 'text-blue-500'}`}
-          onClick={() => setActiveSection('experiences')}
-        >
-          <p className="navbar-text">Experiences</p>
-        </button>
-        <button
-          className={`navbar-link hover:text-gray-400 ${activeSection === 'learning-certificate' && 'text-blue-500'}`}
-          onClick={() => setActiveSection('learning-certificate')}
-        >
-          <p className="navbar-text">Learning Certificates</p>
-        </button>
-        <button
-          className={`navbar-link hover:text-gray-400 ${activeSection === 'certified-certificate' && 'text-blue-500'}`}
-          onClick={() => setActiveSection('certified-certificate')}
-        >
-          <p className="navbar-text">Certified Certificates</p>
-        </button>
-      </nav>
 
       {/* Profile Info (as div) */}
       <div className="flex justify-center items-start mt-10">
@@ -60,6 +39,28 @@ export default function Profile() {
           </div>
         </div>
       </div>
+
+      {/* Navbar */}
+      <nav className="text-white w-full flex justify-center space-x-8 p-4">
+        <button
+          className={`navbar-link hover:text-gray-400 ${activeSection === 'experiences' && 'text-blue-500'}`}
+          onClick={() => setActiveSection('experiences')}
+        >
+          <p className="navbar-text">Experiences Journey</p>
+        </button>
+        <button
+          className={`navbar-link hover:text-gray-400 ${activeSection === 'learning-certificate' && 'text-blue-500'}`}
+          onClick={() => setActiveSection('learning-certificate')}
+        >
+          <p className="navbar-text">Learning Certificates</p>
+        </button>
+        <button
+          className={`navbar-link hover:text-gray-400 ${activeSection === 'certified-certificate' && 'text-blue-500'}`}
+          onClick={() => setActiveSection('certified-certificate')}
+        >
+          <p className="navbar-text">Certified Certificates</p>
+        </button>
+      </nav>
 
       {/* Dynamic Section Content */}
       <div className="mt-8 w-full max-w-xl p-4">
