@@ -77,7 +77,6 @@ export default function Projects() {
         <div className={`gap-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center items-center mx-auto ${isFading ? 'fade-in' : ''}`}>
           {filteredList.map((item, index) => (
             <div key={index} className="relative">
-              <div className="absolute inset-0 bg-transparent border-2 border-white rounded-lg shadow-lg transform translate-x-2 translate-y-2" />
               <Card
                 shadow="sm"
                 className="relative w-[225px] backdrop-blur-lg bg-[#1f1f1f] z-10" // Use z-index to keep card above the shadow
