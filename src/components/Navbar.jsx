@@ -41,7 +41,7 @@ const MyNavbar = () => {
               onClick={() => handleClick(item.index)}
             >
               {item.icon}
-              <span className={`ml-2 navbar-text ${activeIndex === item.index ? "active" : ""}`}>
+              <span className={`ml-2 hover:text-gray-400 navbar-text ${activeIndex === item.index ? "active" : ""}`}>
                 {item.label}
               </span>
             </Link>

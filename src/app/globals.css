@@ -63,7 +63,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-.navbar-text.active::after,
 .navbar-text:hover::after {
   transform: scaleX(1);
 }
