@@ -1,6 +1,8 @@
 'use client';
 import React from "react";
-import { Card, CardHeader, CardBody, Avatar } from "@nextui-org/react";
+import { Card, CardHeader, CardBody, Avatar, CardFooter } from "@nextui-org/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin, faSpotify, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export default function Profile() {
   return (
@@ -17,8 +19,24 @@ export default function Profile() {
             </div>
           </CardHeader>
           <CardBody>
-            
+            <p className="text-center px-2">
+              <span className="text-blue-500">#SoftwareEngineer</span> skilled in AI/ML, Cloud and Web
+            </p>
           </CardBody>
+          <CardFooter className='flex justify-center gap-4 items-center'>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faGithub} className="text-white w-6 h-6 hover:text-gray-400" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faLinkedin} className="text-white w-6 h-6 hover:text-gray-400" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faXTwitter} className="text-white w-6 h-6 hover:text-gray-400" />
+            </a>
+            <a href="https://spotify.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faSpotify} className="text-white w-6 h-6 hover:text-gray-400" />
+            </a>
+          </CardFooter>
         </Card>
       </div>
     </div>
