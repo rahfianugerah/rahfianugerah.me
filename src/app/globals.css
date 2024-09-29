@@ -67,6 +67,11 @@ body {
   transform: scaleX(1);
 }
 
+.navbar-time {
+  font-family: Bebas Neue;
+  color: #6b7280;
+}
+
 .hero-text {
   color: #6b7280;
 }
