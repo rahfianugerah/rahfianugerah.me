@@ -55,7 +55,7 @@ export default function Hero() {
             Cloud Computing, and Website Development, committed to delivering advanced and impactful technological solutions.
           </p>
           <div className="flex items-center space-x-4"> {/* Add space between items */}
-            <Button as={Link} color="primary" href="#" variant="bordered" startContent={<FaBookOpen />}>
+            <Button as={Link} color="primary" href="/blog" variant="bordered" startContent={<FaBookOpen />}>
               Explore Blog
             </Button>
             <a href="mailto:rahfi@example.com" target="_blank" rel="noopener noreferrer">
