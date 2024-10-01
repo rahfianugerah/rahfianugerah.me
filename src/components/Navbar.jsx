@@ -12,8 +12,7 @@ const MyNavbar = () => {
   const menuItems = [
     { label: "Home", href: "/", icon: <FaHome />, index: 0 },
     { label: "Projects", href: "/projects", icon: <FaProjectDiagram />, index: 1 },
-    { label: "Profile", href: "/profile", icon: <FaUser />, index: 2 },
-    { label: "Blog", href: "/blog", icon: <FaBookOpen />, index: 3 }
+    { label: "Profile", href: "/profile", icon: <FaUser />, index: 2 }
   ];
 
   useEffect(() => {
